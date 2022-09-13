@@ -13,4 +13,8 @@ public interface IProductService {
 	
 	Optional<Product> getProduct(Integer Id);
 	
+	Product updateProduct(Product product, Integer Id);
+	
+	public void deleteproduct(Integer Id);
+	
 }
