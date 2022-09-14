@@ -2,6 +2,7 @@ package com.product.controller;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.product.Entity.Product;
@@ -59,5 +61,19 @@ public class ProductController {
 		}
 		return responseEntity;
 	}
+	
+//	@DeleteMapping("/delete")
+//    public String deleteAllBYIds(@RequestParam("ids") List<Integer> ids) {
+//        System.out.println("deleting");
+//        productService.deleteAllBYIds(ids);
+//        return String.join(",", ids.stream().map(value ->  Integer.toString(value)).collect(Collectors.toList()));
+//    }
+//	@DeleteMapping("/delete")
+//	public void deleteAllBYIds(List<Integer> integers) {
+//      productService.deleteByIdIn(new ArrayList<>(integers));
+//	 productService.deleteAll();
+//
+//      System.out.println("deleted");
+//  }
 	
 }

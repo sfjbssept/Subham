@@ -17,4 +17,9 @@ public interface IProductService {
 	
 	public void deleteproduct(Integer Id);
 	
+//	public void deleteAllProducts();
+//	public void deleteByIdIn(List<Integer> integers);
+//
+//	public void deleteAllBYIds(List<Integer> integers);
+	
 }
