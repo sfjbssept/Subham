@@ -35,7 +35,7 @@ public class AppController {
 	return newEmployee.toString() + "updated with name" + name;
 	}
 	
-	@DeleteMapping("/delete{name}")
+	@DeleteMapping("/delete/{name}")
 	String deleteEmployee(@PathVariable String name) {
 		return name;
 	}
