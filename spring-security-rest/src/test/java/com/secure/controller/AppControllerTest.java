@@ -8,7 +8,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 //import org.objectweb.asm.TypeReference;
@@ -29,7 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.secure.entity.Employee;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(AppController.class)
+@WebMvcTest({AppController.class})
 @ActiveProfiles(value = "true")
 public class AppControllerTest {
 
@@ -49,13 +48,13 @@ public class AppControllerTest {
 	@Value("${user.user1.username}")
 	String username1;
 	
-	@Value("${employee.user1.password}")
+	@Value("${user.user1.password}")
 	String password1;
 	
-	@Value("${user.user1.username}")
+	@Value("${admin.user1.username}")
 	String admin_name1;
 	
-	@Value("${employee.user1.password}")
+	@Value("${admin.user1.password}")
 	String admin_password1;
 	
 	@Test
@@ -64,7 +63,7 @@ public class AppControllerTest {
 		responseEntity.andExpect(status().isOk());
 		//ObjectMapper mapper = new ObjectMapper();
 		String result = responseEntity.andReturn().getResponse().getContentAsString();
-		assertEquals("get employee", result);
+		assertEquals("Get Employees", result);
 	}
 	
 	@Test
@@ -81,8 +80,6 @@ public class AppControllerTest {
 		assertEquals("dev", result.getRole());
 		
 	}
-	
-
 	
 
 	private ResultActions processApiRequest(String api, HttpMethod methodtype, String name,  Employee employee, String username, String password) {
