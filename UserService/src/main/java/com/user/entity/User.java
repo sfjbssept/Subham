@@ -8,10 +8,6 @@ public class User {
 	private String optForMeal;
 	private String seatNumber;
 	
-	
-	
-	
-	
 	public User(String name,String gender,String age,String optForMeal,String seatNumber ) {
 		super();
 		this.name = name;

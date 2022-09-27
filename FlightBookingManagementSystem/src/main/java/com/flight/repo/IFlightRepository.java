@@ -1,5 +1,9 @@
 package com.flight.repo;
 
-public interface IFlightRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.flight.Entity.Flight;
+
+public interface IFlightRepository extends JpaRepository<Flight, Integer>{
 
 }
