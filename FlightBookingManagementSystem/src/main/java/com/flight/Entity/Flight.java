@@ -1,5 +1,7 @@
 package com.flight.Entity;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,12 +18,12 @@ public class Flight {
 	private String airline;
 	private String fromPlace;
 	private String toPlace;
-	private Integer startDateTime;
-	private String endDateTime;
-	private String scheduleddays;
+	private Date startDateTime;
+	private Date endDateTime;
+	private Integer scheduleddays;
 	private String instrumentUsed;
-	private String totalNumberofBusinessClassSeats;
-	private String totalNumberofNonBusinessClassSeats;
+	private Integer totalNumberofBusinessClassSeats;
+	private Integer totalNumberofNonBusinessClassSeats;
 	private Integer ticketCost;
 	private Integer numberofRows;
 	private String meal;
@@ -57,22 +59,23 @@ public class Flight {
 	public void setToPlace(String toPlace) {
 		this.toPlace = toPlace;
 	}
-	public Integer getStartDateTime() {
+	public Date getStartDateTime() {
 		return startDateTime;
 	}
-	public void setStartDateTime(Integer startDateTime) {
+	public void setStartDateTime(Date startDateTime) {
 		this.startDateTime = startDateTime;
+		
 	}
-	public String getEndDateTime() {
+	public Date getEndDateTime() {
 		return endDateTime;
 	}
-	public void setEndDateTime(String endDateTime) {
+	public void setEndDateTime(Date endDateTime) {
 		this.endDateTime = endDateTime;
 	}
-	public String getScheduleddays() {
+	public Integer getScheduleddays() {
 		return scheduleddays;
 	}
-	public void setScheduleddays(String scheduleddays) {
+	public void setScheduleddays(Integer scheduleddays) {
 		this.scheduleddays = scheduleddays;
 	}
 	public String getInstrumentUsed() {
@@ -81,16 +84,16 @@ public class Flight {
 	public void setInstrumentUsed(String instrumentUsed) {
 		this.instrumentUsed = instrumentUsed;
 	}
-	public String getTotalNumberofBusinessClassSeats() {
+	public Integer getTotalNumberofBusinessClassSeats() {
 		return totalNumberofBusinessClassSeats;
 	}
-	public void setTotalNumberofBusinessClassSeats(String totalNumberofBusinessClassSeats) {
+	public void setTotalNumberofBusinessClassSeats(Integer totalNumberofBusinessClassSeats) {
 		this.totalNumberofBusinessClassSeats = totalNumberofBusinessClassSeats;
 	}
-	public String getTotalNumberofNonBusinessClassSeats() {
+	public Integer getTotalNumberofNonBusinessClassSeats() {
 		return totalNumberofNonBusinessClassSeats;
 	}
-	public void setTotalNumberofNonBusinessClassSeats(String totalNumberofNonBusinessClassSeats) {
+	public void setTotalNumberofNonBusinessClassSeats(Integer totalNumberofNonBusinessClassSeats) {
 		this.totalNumberofNonBusinessClassSeats = totalNumberofNonBusinessClassSeats;
 	}
 	public Integer getTicketCost() {
@@ -114,8 +117,8 @@ public class Flight {
 	
 	
 	public Flight(Integer id, Integer flightnumber, String airline, String fromPlace, String toPlace,
-			Integer startDateTime, String endDateTime, String scheduleddays, String instrumentUsed,
-			String totalNumberofBusinessClassSeats, String totalNumberofNonBusinessClassSeats, Integer ticketCost,
+			Date startDateTime, Date endDateTime, Integer scheduleddays, String instrumentUsed,
+			Integer totalNumberofBusinessClassSeats, Integer totalNumberofNonBusinessClassSeats, Integer ticketCost,
 			Integer numberofRows, String meal) {
 		super();
 		this.id = id;
@@ -132,6 +135,10 @@ public class Flight {
 		this.ticketCost = ticketCost;
 		this.numberofRows = numberofRows;
 		this.meal = meal;
+	}
+	public Flight() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	
