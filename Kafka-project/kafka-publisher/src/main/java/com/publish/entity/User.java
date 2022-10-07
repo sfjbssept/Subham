@@ -1,5 +1,4 @@
 package com.publish.entity;
-
 import java.util.Arrays;
 
 public class User {

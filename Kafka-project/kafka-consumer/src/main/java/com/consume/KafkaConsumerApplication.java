@@ -23,7 +23,7 @@ public class KafkaConsumerApplication {
 	public List<String> consumeMessages() {
 		return messages;
 	}
-	@KafkaListener(groupId = "groupid-1", topics = "spring-kafka-2", containerFactory = "kafkaListenerContainerFactory")
+	@KafkaListener(groupId = "groupid-1", topics = "spring-kafka1", containerFactory = "kafkaListenerContainerFactory")
 	public List<String> getMessageFromTopic(String data) {
 		messages.add(data);
 		return messages;
@@ -34,7 +34,7 @@ public class KafkaConsumerApplication {
 		return userFromTopic;
 	}
 	
-	@KafkaListener(groupId = "groupid-2", topics = "spring-kafka-2", containerFactory = "userKafkaListenerContainerFactory")
+	@KafkaListener(groupId = "groupid-2", topics = "spring-kafka1", containerFactory = "userKafkaListenerContainerFactory")
 	public User getJsonMessageFromTopic(User user) {
 		userFromTopic = user;
 		return userFromTopic;
