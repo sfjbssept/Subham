@@ -1,0 +1,20 @@
+
+<table>
+    <tr>
+        <th>company</th>
+        <th>from</th>
+        <th>to</th>
+        <th>departure</th>
+        <th>arrival</th>
+        <th>cost</th>
+    </tr>
+
+    <tr *ngFor="let f of flights">
+        <td>{{f.company}}</td>
+        <td>{{f.from}}</td>
+        <td>{{f.to}}</td>
+        <td>{{f.departure}}</td>
+        <td>{{f.arrival}}</td>
+        <td>{{f.cost}}</td>
+    </tr>
+</table>

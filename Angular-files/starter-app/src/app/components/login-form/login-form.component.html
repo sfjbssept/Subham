@@ -1,0 +1,28 @@
+<div class="container">
+<form (submit)="processLogin($event)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+       placeholder="Enter email" required minlength="4" [(ngModel)]="email" name="email" #useremail="ngModel">
+     
+    </div>
+
+    <div *ngIf="useremail.invalid  && (useremail.dirty || useremail.touched)" class="alert alert-danger">
+        <div *ngIf="useremail.errors['minlength']">
+            Name must be at least 4 character long.
+        </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password" required minlength="4" [(ngModel)]="password" name="password" #pass="ngModel">
+    </div>
+
+    <div *ngIf="pass.invalid  && (pass.dirty || pass.touched)" class="alert alert-danger">
+        <div *ngIf="pass.errors['minlength']">
+            Name must be at least 4 character long.
+        </div>
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
